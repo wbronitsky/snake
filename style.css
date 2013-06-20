@@ -1,0 +1,22 @@
+.outer {
+  width: 500px;
+  height: 500px;
+  border: 1px solid lightgreen;
+  border-radius: 5px;
+}
+
+.inner {
+  float: left;
+  width: 10px;
+  height: 10px;
+  /*background-color: blue;*/
+  text-align: center;
+}
+
+.snake {
+  background-color: blue;
+}
+
+.apple {
+  background-color: red;
+}
