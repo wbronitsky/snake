@@ -30,7 +30,8 @@ var Snakes = function (){
 
 	function Game(snake){
 		this.snake = snake,
-		this.apple = [8,8]
+		this.apple = [8,8],
+		this.points = 0,
 		this.xDim = 50,
 		this.yDim = 50
 	}
@@ -44,6 +45,7 @@ var Snakes = function (){
 	Game.prototype.randomApple = function() {
 		var that = this;
 
+		that.points += 10;
 		that.apple = [Math.floor(Math.random() * 50), 
 									Math.floor(Math.random() * 50)]
 	}
@@ -114,6 +116,8 @@ var Snakes = function (){
 		var rowDiv, colDiv, snakeSpot, appleSpot, apple;
 		
 		$('.inner').empty().removeClass('snake').removeClass('apple');
+		$('#0_0').empty();
+		$('#0_0').append(that.game.points);
 
 		_.each(that.game.snake.body, function(piece) {
 			snakeSpot = $("#"+ piece[0] + "_" + piece[1]);
